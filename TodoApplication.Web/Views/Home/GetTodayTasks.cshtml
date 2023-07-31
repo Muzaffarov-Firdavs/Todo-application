@@ -1,0 +1,22 @@
+﻿@model TodoTasksViewModel
+
+<div class="row">
+    <div class="col-md-6">
+        <h3 class="ms-5">Today</h3>
+    </div>
+    <div class="col-md-6 text-end">
+        <a href="@Url.Action("Create", "TodoTasks")" class="btn btn-primary mt-2 ms-5">New Task</a>
+    </div>
+</div>
+
+
+@foreach (var p in Model.TodoTasks)
+{
+    <partial name="TodoTaskSummary" model="p" />
+}
+
+<div page-model="@Model.PagingInfo" page-action="GetTodayTasks" page-classes-enabled="true"
+     page-class="btn" page-class-normal="btn-outline-dark"
+     page-class-selected="btn-primary"
+     class="btn-group pull-right m-1">
+</div>

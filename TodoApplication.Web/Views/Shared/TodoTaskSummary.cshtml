@@ -1,0 +1,38 @@
+﻿@using TodoApplication.Web.Infrastructure;
+@model TodoTask
+
+<ul class="ul-list">
+    <li>
+        <div class="content">
+            <label class="checkbox-container">
+            </label>
+            <div class="box">
+                <h1>@Html.ActionLink(Model.Title, "Edit", "TodoTasks", new { id = Model.Id }, null)</h1>
+                <div class="description">
+                    <div>
+                        <img src="https://cdn-icons-png.flaticon.com/512/2222/2222384.png" alt="">
+                        <p>@Model.Status</p>
+                    </div>
+                    <div>
+                        <img src="https://cdn-icons-png.flaticon.com/512/833/833593.png" alt="">
+                        @if (Model.IsPlanned)
+                        {
+                            <p>@Model.DueTime</p>
+                        }
+                        else
+                        {
+                            <p>not planned</p>
+                        }
+                    </div>
+                    <div>
+                        @if (Model.IsImportant)
+                        {
+                            <img src="https://cdn-icons-png.flaticon.com/512/1827/1827422.png" alt="">
+                            <p>Important</p>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+</ul>

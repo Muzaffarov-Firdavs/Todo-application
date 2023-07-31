@@ -1,0 +1,109 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Ysabeau Infant', sans-serif;
+}
+body{
+  background-color: #e0e0e0;
+}
+
+.ul-list li{
+    width: 800px;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 20px 0px 20px;
+    background: white;
+}
+
+.box h1{
+  font-size: 30px;
+  padding-left: 20px;
+}
+
+.description{
+    display: flex;
+    padding-left: 20px;
+}
+
+.description div{
+  display: flex;
+}
+
+.description div img{
+  width: 20px;
+  height: 20px;
+}
+
+.description div p{
+  padding: 0px 10px 0px 4px;
+}
+
+.checkbox-container {
+  display: inline-block;
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  font-size: 18px;
+  user-select: none;
+}
+
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: absolute;
+  top: 18px;
+  left: 10px;
+  height: 32px;
+  width: 32px;
+  border-radius: 40px;
+  background-color: #eee;
+}
+
+.checkbox-container:hover .checkmark {
+  background-color: #ccc;
+}
+
+.checkbox-container input:checked ~ .checkmark {
+  background-color: #2196F3;
+  box-shadow: 0 0 5px 0px #2196F3;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkbox-container .checkmark:after {
+  left: 11px;
+  top: 4px;
+  width: 9px;
+  height: 15px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+
+.star-content img{
+  width: 34px;
+  margin: 16px 25px 0 0;
+}
+
+.star-active{
+  background-color: gold;
+}
+
+.content{
+  display: flex;
+}

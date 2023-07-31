@@ -1,0 +1,54 @@
+﻿@model IEnumerable<TodoList>
+
+<div class="row mt-2 ms-2">
+    <a class="btn btn-block btn-outline-secondary"
+       asp-action="GetTodayTasks" asp-controller="Home"
+       asp-route-taskPage="1">
+        Today
+    </a>
+</div>
+
+<div class="row mt-2 ms-2">
+    <a class="btn btn-block btn-outline-secondary"
+       asp-action="Index"
+       asp-controller="Home"
+       asp-route-category="">
+        ALL
+    </a>
+</div>
+
+@foreach (var todoList in Model)
+{
+    <div class="row mt-2 ms-2">
+        <a class="btn btn-block @(todoList.Title == ViewBag.SelectedCategory ? "btn-primary" : "btn-outline-secondary")"
+       asp-action="Index" asp-controller="Home"
+       asp-route-title="@todoList.Title"
+       asp-route-taskPage="1">
+            <div class="d-flex justify-content-between align-items-center">
+                <span>@todoList.Title</span>
+                <span>@todoList.CountOfTasks</span>
+            </div>
+        </a>
+    </div>
+}
+
+<div class="row mt-2 ms-2">
+    <a class="btn btn-block btn-outline-secondary"
+       asp-action="GetCompletedTasks" asp-controller="Home"
+       asp-route-taskPage="1">
+        <div class="d-flex justify-content-between align-items-center">
+            <span>Completed tasks</span>
+            <span>@ViewBag.CountOfCompletedTasks</span>
+        </div>
+    </a>
+</div>
+
+
+<div class="row">
+    <div class="col-md-6">
+        <a href="@Url.Action("Index", "TodoLists")" class="btn btn-primary mt-2 ms-2">All Lists</a>
+    </div>
+    <div class="col-md-6 text-end">
+        <a href="@Url.Action("Create", "TodoLists")" class="btn btn-primary mt-2 ms-2">New List</a>
+    </div>
+</div>
